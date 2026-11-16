@@ -1,0 +1,24 @@
+{% extends 'agendamentos/base.html' %}
+
+{% block conteudo %}
+  <p><a class="botao" href="{% url 'agendamentos:criar' %}">+ Novo agendamento</a></p>
+
+  <table>
+    <tr>
+      <th>Nome</th>
+      <th>Data</th>
+      <th>Serviço</th>
+      <th></th>
+    </tr>
+    {% for agendamento in agendamentos %}
+      <tr>
+        <td>{{ agendamento.nome }}</td>
+        <td>{{ agendamento.data|date:"d/m/Y" }}</td>
+        <td>{{ agendamento.servico }}</td>
+        <td><a class="botao" href="{% url 'agendamentos:detalhe' agendamento.id %}">Ver</a></td>
+      </tr>
+    {% empty %}
+      <tr><td colspan="4">Nenhum agendamento cadastrado.</td></tr>
+    {% endfor %}
+  </table>
+{% endblock %}

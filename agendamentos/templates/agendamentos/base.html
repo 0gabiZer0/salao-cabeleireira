@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Salão - Agendamentos</title>
+  <style>
+    body { font-family: Arial, sans-serif; background: #fdf2f8; max-width: 800px; margin: 0 auto; padding: 20px; }
+    h1 a { color: #be185d; text-decoration: none; }
+    .caixa { background: white; padding: 20px; border-radius: 10px; box-shadow: 0 2px 8px rgba(0,0,0,.1); }
+    table { width: 100%; border-collapse: collapse; }
+    th, td { padding: 10px; text-align: left; border-bottom: 1px solid #eee; }
+    th { background: #db2777; color: white; }
+    a.botao, button { display: inline-block; background: #db2777; color: white; border: none;
+                      padding: 8px 14px; border-radius: 5px; text-decoration: none; cursor: pointer; font-size: 14px; }
+    .cinza { background: #6b7280 !important; }
+    .vermelho { background: #dc2626 !important; }
+    form p { margin: 12px 0; }
+    form label { display: block; font-weight: bold; margin-bottom: 4px; }
+    form input, form select { width: 100%; padding: 8px; box-sizing: border-box; }
+  </style>
+</head>
+<body>
+  <h1><a href="{% url 'agendamentos:lista' %}">💇‍♀️ Agendamentos do Salão</a></h1>
+  <div class="caixa">
+    {% block conteudo %}{% endblock %}
+  </div>
+</body>
+</html>
